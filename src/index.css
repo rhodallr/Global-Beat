@@ -5,5 +5,68 @@
 html,
 body {
   margin: 0;
-  background: #f6f1e4;
+  background: theme('colors.eeze.blue-tint');
+  color: theme('colors.eeze.dark-blue');
+  /* Trebuchet MS is the brand's approved stand-in for "Obviously" (see src/theme.js) */
+  font-family: "Obviously", "Trebuchet MS", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+@layer components {
+  /* Brand headline style: bold, uppercase, tight */
+  .display {
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+
+  /* Dropdowns on the dark header: custom arrow instead of the browser's */
+  .header-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+  }
+  .header-select option {
+    color: theme('colors.eeze.dark-blue');
+  }
+
+  /* The bolt pattern as a faint texture on brand-coloured panels.
+     Drawn in a layer behind the content, so the panel keeps its own background. */
+  .bolt-texture {
+    position: relative;
+    isolation: isolate;
+  }
+  .bolt-texture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* one stretched copy: the SVG doesn't tile seamlessly when repeated */
+    background: url('/brand/eeze-pattern-overlay-white.svg') center / cover no-repeat;
+    pointer-events: none;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.18s ease-out;
+  }
+  .pop-in {
+    animation: popIn 0.24s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .pop-in {
+    animation: none;
+  }
 }

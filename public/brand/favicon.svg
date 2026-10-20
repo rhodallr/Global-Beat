@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Calendar page in eeze colours: dark-blue page, purple header, white bolt -->
+  <defs>
+    <clipPath id="page"><rect x="4" y="9" width="56" height="51" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#page)">
+    <rect x="4" y="9" width="56" height="51" fill="#1F0575"/>
+    <rect x="4" y="9" width="56" height="15" fill="#650BFF"/>
+  </g>
+  <rect x="17" y="3" width="7" height="13" rx="3.5" fill="#C6E1FF"/>
+  <rect x="40" y="3" width="7" height="13" rx="3.5" fill="#C6E1FF"/>
+  <path fill="#FFFFFF" transform="translate(10,37) scale(0.29) translate(-22.93,-36.2)" d="M163.08,66.22c-.53.57-1.26.93-1.99.93h-84.27l11.4-13.57c.46-.5.07-1.36-.6-1.36h-34.64c-14.48,0-23.54-5.87-30.05-16.02h108.6c1.06,0,1.66,1.29.93,2.15l-10.93,12.97h51.04c1.13,0,1.67,1.28,1,2.14l-10.49,12.77Z"/>
+</svg>
