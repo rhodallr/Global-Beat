@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { BRAND, ink } from "../theme.js";
 import { REGIONS, REGION_ORDER } from "../data/regions.js";
 import { MONTHS, WEEKDAYS, buildGrid, eventsForYear, formatDate, isSameDay, plural, weekdayName } from "../lib/calendar.js";
@@ -110,6 +111,7 @@ export default function TvMode() {
           </span>
         ))}
       </footer>
+      <Analytics />
     </div>
   );
 }
