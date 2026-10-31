@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Sparkles } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header.jsx";
 import SearchBox from "./components/SearchBox.jsx";
 import RegionFilters from "./components/RegionFilters.jsx";
@@ -211,6 +212,7 @@ export default function App() {
         />
       )}
       {selected && <EventModal event={selected} onClose={() => setSelected(null)} />}
+      <Analytics />
     </div>
   );
 }
